@@ -605,6 +605,14 @@ progress {
 .img-fluid {
   max-width: 100%;
   height: auto;
+  
+}
+
+.portrait {
+  max-width: 50%;
+  height: auto;
+  border-radius: 20px;
+  margin-bottom: 2rem;
 }
 
 .img-thumbnail {
