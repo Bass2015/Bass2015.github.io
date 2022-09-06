@@ -605,6 +605,14 @@ progress {
 .img-fluid {
   max-width: 100%;
   height: auto;
+  
+}
+
+.portrait {
+  max-width: 50%;
+  height: auto;
+  border-radius: 20px;
+  margin-bottom: 2rem;
 }
 
 .img-thumbnail {
@@ -11523,13 +11531,13 @@ body {
     color: #fff;
   }
   #mainNav.navbar-shrink {
-    background-color: #fff;
+    background-color: #333333;
   }
   #mainNav.navbar-shrink .navbar-brand {
-    color: #000;
+    color: rgba(255, 255, 255, 0.5);
   }
   #mainNav.navbar-shrink .nav-link {
-    color: #000;
+    color: rgba(255, 255, 255, 0.5);
     padding: 1.5rem 1.5rem 1.25rem;
     border-bottom: 0.25rem solid transparent;
   }
@@ -11614,7 +11622,29 @@ body {
 
 .projects-section {
   padding: 10rem 0;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.8);
 }
+
+
+
+.project-cell {
+  background:rgba(90, 90, 90);
+  border-radius: 20px;
+  height: 50%;
+  padding:1rem;
+  width:60%;
+  margin: auto;
+  margin-top: 2rem;
+  justify-content: center;
+}
+
+@media only screen and (min-width: 768px) {
+  .project-cell {
+    width:40%;
+  }
+}
+
 .projects-section .featured-text {
   padding: 2rem;
 }
@@ -11625,12 +11655,12 @@ body {
   }
 }
 .projects-section .project-text {
-  padding: 3rem;
+  padding: 1.2rem;
   font-size: 90%;
 }
 @media (min-width: 992px) {
   .projects-section .project-text {
-    padding: 5rem;
+    padding: 1.2rem;
   }
   .projects-section .project-text hr {
     border-color: #64a19d;
