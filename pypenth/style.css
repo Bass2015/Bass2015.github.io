@@ -1,0 +1,9 @@
+
+#canvas {
+    background-color: blanchedalmond;
+}
+
+.canvas-div {
+    display: flex;
+    justify-content: center;
+}
