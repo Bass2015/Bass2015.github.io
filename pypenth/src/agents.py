@@ -1,13 +1,27 @@
 from abc import ABC, abstractmethod
-import events
+from pydoc import plain
+import constants
+from events import deboog
 from constants import ACTIONS, KEYDOWN, KEYUP
+from objects import Asteroid, Bullet
 from js import document
 import random
 import time
 
 class Agent(ABC):
-    def __init__(self, ship):
+    def __init__(self, ship, player=0):
+        constants.SHIP_EXPLODED.suscribe(self)
+        constants.COLLISION.suscribe(self)
+        constants.GAME_ENDED.suscribe(self)
+        constants.GAME_START.suscribe(self)
+        self.active = True
         self.ship = ship
+        self.lifes = constants.INIT_LIFES
+        self.score = 0
+        self.player = player
+    
+    def __str__(self):
+        return f"Player {self.player}, Score: {self.score}, Lifes: {self.lifes}"
     
     def get_action(self, action):
         if action == 0: # Forward
@@ -46,52 +60,82 @@ class Agent(ABC):
             return [ACTIONS[4]]
         if action == 17: # Idle
             return [ACTIONS[5]]
-            
+
+    def on_ship_exploded(self, ship):
+        if ship.player == self.player:
+            self.lifes -= 1
+        else:
+            self.score += 100
+        constants.STATE_CHANGED.trigger()
+        if self.lifes == 0: 
+            constants.GAME_ENDED.trigger(self)
+        
+    def on_collision_enter(self, obj1, obj2):
+        if (isinstance(obj1, Asteroid) 
+            and isinstance(obj2, Bullet) 
+            and obj2.player == self.player):
+            self.score += 10
+            constants.STATE_CHANGED.trigger()
+    
+    def on_game_ended(self, looser):
+        self.active = False
+    
+    def on_game_start(self):
+        self.active = True
+
     @abstractmethod
     def act(*args):
         pass
 
 class Human(Agent):
-    def __init__(self, ship):
+    KEY_MAPS = {
+        'F': ['w', 'ArrowUp'], 
+        'B': ['s', 'ArrowDown'],
+        'L': ['a', 'ArrowLeft'],
+        'R': ['d', 'ArrowRight'],
+        'FIRE': [' ', 'Enter']
+    }
+    def __init__(self, ship, player):
         KEYDOWN.suscribe(self)
         KEYUP.suscribe(self)
         self.keysdown = []
-        super(Human, self).__init__(ship)
+        super(Human, self).__init__(ship, player)
    
     def act(self):  
-        if 'w' in self.keysdown:
-            if 'a' in self.keysdown:
-                if ' ' in self.keysdown:
+        if not self.active: return []
+        if Human.KEY_MAPS['F'][self.player-1] in self.keysdown:
+            if Human.KEY_MAPS['L'][self.player-1] in self.keysdown:
+                if Human.KEY_MAPS['FIRE'][self.player-1] in self.keysdown:
                     return self.get_action(9)
                 return self.get_action(4)
-            if 'd' in self.keysdown:
-                if ' ' in self.keysdown:
+            if Human.KEY_MAPS['R'][self.player-1] in self.keysdown:
+                if Human.KEY_MAPS['FIRE'][self.player-1] in self.keysdown:
                     return self.get_action(10)
                 return self.get_action(5)
-            if ' ' in self.keysdown:
+            if Human.KEY_MAPS['FIRE'][self.player-1] in self.keysdown:
                 return self.get_action(8)
             return self.get_action(0)
-        if 's' in self.keysdown:
-            if 'a' in self.keysdown:
-                if ' ' in self.keysdown:
+        if Human.KEY_MAPS['B'][self.player-1] in self.keysdown:
+            if Human.KEY_MAPS['L'][self.player-1] in self.keysdown:
+                if Human.KEY_MAPS['FIRE'][self.player-1] in self.keysdown:
                     return self.get_action(12)
                 return self.get_action(6)
-            if 'd' in self.keysdown:
-                if ' ' in self.keysdown:
+            if Human.KEY_MAPS['R'][self.player-1] in self.keysdown:
+                if Human.KEY_MAPS['FIRE'][self.player-1] in self.keysdown:
                     return self.get_action(13)
                 return self.get_action(7)
-            if ' ' in self.keysdown:
+            if Human.KEY_MAPS['FIRE'][self.player-1] in self.keysdown:
                 return self.get_action(11)
             return self.get_action(1)
-        if 'a' in self.keysdown:
-            if ' ' in self.keysdown:
+        if Human.KEY_MAPS['L'][self.player-1] in self.keysdown:
+            if Human.KEY_MAPS['FIRE'][self.player-1] in self.keysdown:
                 return self.get_action(14)
             return self.get_action(2)
-        if 'd' in self.keysdown:
-            if ' ' in self.keysdown:
+        if Human.KEY_MAPS['R'][self.player-1] in self.keysdown:
+            if Human.KEY_MAPS['FIRE'][self.player-1] in self.keysdown:
                 return self.get_action(15)
             return self.get_action(3)
-        if ' ' in self.keysdown:
+        if Human.KEY_MAPS['FIRE'][self.player-1] in self.keysdown:
             return self.get_action(16)
         return self.get_action(17)
 
@@ -104,12 +148,13 @@ class Human(Agent):
             self.keysdown.remove(key)
 
 class RandomAI(Agent):
-    def __init__(self, ship):
+    def __init__(self, ship, player):
         self.last_change = time.time()
         self.change_time = 1.5
         self.current_move = 17
-        super(RandomAI, self).__init__(ship)
+        super(RandomAI, self).__init__(ship, player)
     def act(self):
+        if not self.active: return []
         if time.time() - self.last_change > self.change_time:
             self.current_move = random.randint(0,17)
             self.last_change = time.time()

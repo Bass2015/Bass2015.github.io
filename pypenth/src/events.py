@@ -69,5 +69,22 @@ class AsteroidHitEvent(Event):
         for observer in self.observers:
             observer.on_asteroid_hit(asteroid)
 
+class ShipExplodedEvent(Event):
+    def trigger(self, ship):
+        for observer in self.observers:
+            observer.on_ship_exploded(ship)
 
+class StateChangedEvent(Event):
+    def trigger(self):
+        for observer in self.observers:
+            observer.on_state_changed()
 
+class GameEndedEvent(Event):
+    def trigger(self, loser):
+        for observer in self.observers:
+            observer.on_game_ended(loser)
+
+class GameStartEvent(Event):
+    def trigger(self):
+        for observer in self.observers:
+            observer.on_game_start()

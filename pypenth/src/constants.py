@@ -1,11 +1,14 @@
-from js import document, window
+from js import document
 import events
 import math
 
 CANVAS = document.getElementById("canvas")
 CTX = CANVAS.getContext("2d")
+UI = document.getElementById("ui_canvas").getContext("2d")
 
 GOLDEN_NUMBER = (1 + 5 ** 0.5) / 2
+
+INIT_LIFES = 5
 # Game Events
 # meter todo esto en un diccionario
 UPDATE = events.UpdateEvent()
@@ -16,6 +19,10 @@ OBJECTOUT = events.ObjectOutEvent()
 SHOT = events.ShotEvent()
 COLLISION = events.CollisionEvent()
 ASTEROID_HIT = events.AsteroidHitEvent()
+SHIP_EXPLODED = events.ShipExplodedEvent()
+STATE_CHANGED = events.StateChangedEvent()
+GAME_ENDED = events.GameEndedEvent()
+GAME_START = events.GameStartEvent()
 
 # Actions
 ACTIONS = {0: "FORWARD",
@@ -28,11 +35,11 @@ ACTIONS = {0: "FORWARD",
 # Ship config
 ANGLES = [162.0, 234.0, 306.0, 18.0]
 RADIUS = -0.015 * max(CANVAS.width, CANVAS.height)
-ROT_SPEED = math.pi/32
+ROT_SPEED = 4.5
 SHIP_SPEED = 350
 SHIP_ACC = 30
 SHIP_DEC = 10
-SHOOTING_SPEED = 0.4
+SHOOTING_SPEED = 0.2
 RESPAWN_TIME = 3
 PHANTOM_TIME = 1.5
 COLORS = {
@@ -40,10 +47,14 @@ COLORS = {
         1: {
         'inner': 'rgb(255, 160, 122, {})',
         'outer': 'rgb(173, 216, 230, {})'
+        }, 
+        2: {
+        'inner': 'rgb(34, 139, 34, {})',
+        'outer': 'rgb(255, 215, 0, {})'
         }
     },
-    'bullet': 'black', 
-    'asteroid': 'black'}
+    'bullet': 'rgb(240, 248, 255)', 
+    'asteroid': 'rgb(240, 248, 255)'}
 
 # Miniship config
 PENTAGON_SIDE = 2*RADIUS*math.sin(math.pi/5)
