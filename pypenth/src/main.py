@@ -14,7 +14,6 @@ bullet_pool, asteroid_pool = pools.BulletPool(), pools.AsteroidPool()
 SHIPS = [Ship(player=1), Ship(player=2)]
 PLAYERS = []
 UIMANAGER = UIManager()
-asteroid_pool.spawn_asteroid()
 
 def on_key_down(*args):
     if args[0].key not in keysdown:
