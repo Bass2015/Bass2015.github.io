@@ -3,11 +3,12 @@ from objects import GameObject, Bullet, Ship
 import constants
 import events
 def check_objects(asteroids, bullets, ships):
-    for asteroid in asteroids:
-        for ship in ships:
+    for ship in ships:
+        for bullet in bullets:
+            check_collision(ship, bullet)
+        for asteroid in asteroids:
             check_collision(asteroid, ship)
             for bullet in bullets:
-                check_collision(ship, bullet)
                 check_collision(asteroid, bullet)
    
 def check_collision(obj1:GameObject, obj2:GameObject):
