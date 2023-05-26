@@ -225,15 +225,15 @@ a:hover {
 
 **********************************************************************/
 #head {
-  background: #f4f4f4 url(../images/bg_head.jpg) top center;
+  background: #f4f4f4 url(../images/library.jpg) top center;
   background-size: cover;
   color: #7C7C7C;
   padding: 30px 0 35px 0;
 }
 #head img.img-circle {
   display: block;
-  width: 140px;
-  height: 140px;
+  width: 250px;
+  height: 250px;
   overflow: hidden;
   border: 9px solid rgba(0, 0, 0, 0.05);
   margin: 0 auto;
@@ -267,6 +267,10 @@ a:hover {
 .home #head .title {
   font-size: 49px;
   font-size: 3.0625rem;
+  color: black
+  /* background-color: rgba(255,255,255,0.8);
+  box-shadow: 0px 0px 10px 10px rgba(255,255,255,0.8);
+  padding: 0px 8rem 0px 8rem; */
 }
 .home #head .tagline {
   font-size: 16px;
