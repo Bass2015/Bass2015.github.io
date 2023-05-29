@@ -8,15 +8,16 @@ jQuery(document).ready(function($) {
 	var sticky_navigation = function(){
 		var scroll_top = $(window).scrollTop(); // our current vertical position from the top
 		
+		my_nav.addClass( 'stick' );
 		// if we've scrolled more than the navigation, change its position to fixed to stick to top, otherwise change it back to relative
-		if (scroll_top > sticky_navigation_offset_top) { 
-			my_nav.addClass( 'stick' );
-		} else {
-			my_nav.removeClass( 'stick' );
-		}   
+		// if (scroll_top > sticky_navigation_offset_top) { 
+		// } else {
+		// 	my_nav.removeClass( 'stick' );
+		// }   
+
 	};
 
-	var initio_parallax_animation = function() { 
+	var parallax_animation = function() { 
 		$('.parallax').each( function(i, obj) {
 			var speed = $(this).attr('parallax-speed');
 			if( speed ) {
@@ -32,7 +33,7 @@ jQuery(document).ready(function($) {
 	// and run it again every time you scroll
 	$(window).scroll(function() {
 		 sticky_navigation();
-		 initio_parallax_animation();
+		 parallax_animation();
 	});
 
 });
