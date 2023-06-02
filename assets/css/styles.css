@@ -800,3 +800,41 @@ footer.entry-meta .meta-in {
     max-width: 1080px;
   }
 }
+
+/*********************************************************************
+
+
+                                CUSTOM
+
+
+**********************************************************************/
+
+#name_tag {
+  background: linear-gradient(transparent 0%,
+          rgba(255, 255, 255, 0.9) 10%,  
+          rgba(255, 255, 255, 0.9) 90%, 
+          transparent 100%);
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  width: 110vw;
+}
+
+/* #name_tag::before,
+#name_tag::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 20px;
+  background-color: rgba(255, 255, 255, 0.9);
+  filter: blur(20px);
+}
+
+#name_tag::before {
+  top: -20px;
+}
+
+#name_tag::after {
+  bottom: -20px;
+} */
