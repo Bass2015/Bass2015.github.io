@@ -120,7 +120,28 @@
 			<!-- /Sidebar -->
 			
 		</div>
+		<h2 class="section-title"><span>Contact me</span></h2>
+		<div class="row section topspace" style="display: flex; justify-content: center;">
+			<div class="panel-cta col-md-8">
+				<div class="panel-body">
+					<form id="fs-frm" name="simple-contact-form" accept-charset="utf-8" action="https://formspree.io/f/{form_id}" method="post">
+						<fieldset id="fs-frm-inputs">
+							<div><label for="full-name">Full Name</label></div>
+							<div><input type="text" name="name" id="full-name" placeholder="First and Last" required=""></div>
+							<div><label for="email-address">Email Address</label></div>
+							<div><input type="email" name="_replyto" id="email-address" placeholder="email@domain.tld" required=""></div>
+							<div><label for="message">Message</label></div>
+							<div><textarea rows="5" name="message" id="message" placeholder="Write your query here." required=""></textarea></div>
+							<div><input type="hidden" name="_subject" id="email-subject" value="Contact Form Submission"></div>
+						</fieldset>
+						<input class="btn btn-primary" type="submit" value="Submit">
+					</form>
+				</div>
+			</div>
+
+		</div> <!-- /section -->
 	</div>	<!-- /container -->
+
 	
 </main>
 
