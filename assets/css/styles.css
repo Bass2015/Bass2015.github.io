@@ -225,7 +225,11 @@ a:hover {
 
 **********************************************************************/
 #head {
-  background: #f4f4f4 url(../images/library.jpg) top center;
+  /* background: #f4f4f4 url(../images/library.jpg) top center; */
+  background: linear-gradient(
+    rgba(181, 220, 248, 0.9) 0%,  
+    rgba(136, 149, 178, 0.9) 100%
+    );
   background-size: cover;
   color: #7C7C7C;
   padding: 30px 0 35px 0;
@@ -813,13 +817,21 @@ footer.entry-meta .meta-in {
 
 #name_tag {
   background: linear-gradient(transparent 0%,
-          rgba(255, 255, 255, 0.9) 10%,  
-          rgba(255, 255, 255, 0.9) 90%, 
+          rgba(255, 255, 255, 0.7) 10%,  
+          rgba(255, 255, 255, 0.7) 90%, 
           transparent 100%);
   position: absolute;
   left: 50%;
   transform: translate(-50%);
   width: 110vw;
+  padding-bottom: 0.65rem;
+}
+
+.head_bg {
+  background: linear-gradient(
+          rgba(181, 220, 248, 0.9) 0%,  
+          rgba(136, 149, 178, 0.9) 100%
+          );
 }
 
 /* reset */

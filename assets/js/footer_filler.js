@@ -4,7 +4,7 @@ const whyAFox = 'The reason is the tale of the fox and the hedgehog and its \
                  philosopher Isaiah Berlin\'s essay, which divides people into two categories: foxes and hedgehogs. \
                  <br>Foxes are adaptable and open-minded individuals who draw upon a wide range of \
                  information. Hedgehogs, on the other hand, rely on a single big idea to interpret the world. \
-                 Silver highlights the importance of being a fox-like thinker who embraces complexity\
+                 Silver highlights the importance of being a <strong>fox-like thinker </strong>who embraces complexity\
                  and multiple viewpoints rather than being overly confident in one approach.'
 const contact = '+34 658 11 98 21<br><a href="mailto:#">bass.dolg@gmail.com</a>'
 const underfooterText = "Copyright © 2022, Sebastián D.";
