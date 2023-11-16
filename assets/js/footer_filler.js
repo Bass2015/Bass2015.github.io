@@ -10,11 +10,11 @@ const contact = '+34 658 11 98 21<br><a href="mailto:#">bass.dolg@gmail.com</a>'
 const underfooterText = "Copyright © 2022, Sebastián D.";
 
 const followMeWidget = createWidget("Follow me", githubLink, '3', 'follow-me-icons');
-const whyAFoxWidget = createWidget("Why a fox?", whyAFox, '6', 'text')
 const contactWidget = createWidget("Contact", contact, '3', 'text')
+const whyAFoxWidget = createWidget("Why a fox?", whyAFox, '6', 'text')
 const footer = document.querySelector("#footer .container .row");
 footer.appendChild(followMeWidget)
-footer.appendChild(whyAFoxWidget)
+// footer.appendChild(whyAFoxWidget)
 footer.appendChild(contactWidget)
 
 
