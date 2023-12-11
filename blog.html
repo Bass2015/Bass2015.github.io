@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="utf-8">
-	<meta name="viewport"    content="width=device-width, initial-scale=1.0">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="">
-	<meta name="author"      content="Sergey Pozhilov (GetTemplate.com)">
-	
+	<meta name="author" content="Sergey Pozhilov (GetTemplate.com)">
+
 	<title>V.S. | Blog</title>
 
-	<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🦊</text></svg>">
-	
+	<link rel="icon"
+		href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🦊</text></svg>">
+
 	<!-- Bootstrap -->
 	<link href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.no-icons.min.css" rel="stylesheet">
 	<!-- Icon font -->
@@ -21,120 +23,178 @@
 
 	<!--[if lt IE 9]> <script src="assets/js/html5shiv.js"></script> <![endif]-->
 </head>
+
 <body>
 
-<header id="header">
-	<div id="head">
-		<h1 id="logo" class="text-center">
-			<img class="img-circle" src="assets/img/me.png" alt="">
-			<div class="container">
-				<div class="row" id="name_tag">
-					<span class="title">Sebastian's Blog</span>
-					<!-- <span class="tagline">A creative man is motivated by the desire to achieve, not by the desire to beat others.</span> -->
-				</div>
-			</div>
-		</h1>
-	</div>
-
-	<nav class="navbar navbar-default navbar-sticky">
-		<div class="container-fluid">
-			
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-			</div>
-			
-			<div class="navbar-collapse collapse" id="navbar-collapse">
-				
-				<ul class="nav navbar-nav">
-					<li><a href="index.html">Home</a></li>
-					<li><a href="about.html">About</a></li>
-					<li class="active"><a href="blog.html">Blog</a></li>
-				</ul>
-			
-			</div><!--/.nav-collapse -->			
-		</div>	
-	</nav>
-</header>
-
-<main id="main">
-
-	<div class="container">
-		<div class="row topspace">
-			<div class="col-sm-8 col-sm-offset-2">
-															
-				<article class="post">
-					<header class="entry-header">
-						<div class="entry-meta"> 
-							<span class="posted-on"><time class="entry-date published" date="2013-09-27">May, 2023</time></span>			
-						</div>
-						<h1 class="entry-title">Hello world!</h1>
-					</header>
-					<div class="entry-content">
-						<p>When I want to learn a new topic, I immerse myself in the writings of those who have generously 
-							helped me understand various subjects. Writing a blog is my way of paying it forward and giving 
-							back to the community that has supported me in my own learning journey. By sharing 
-							my knowledge through articles, I hope to contribute to the collective pool of 
-							information and provide others with the same kind of guidance and enlightenment 
-							that I have received. It brings me immense joy to know that my writing can assist
-							 others in their quest for knowledge and understanding.</p>
+	<header id="header">
+		<div id="head">
+			<h1 id="logo" class="text-center">
+				<!-- <img class="img-circle" src="assets/img/me.png" alt=""> -->
+				<div class="container">
+					<div class="row" id="name_tag">
+						<span class="title">Sebastian's Blog</span>
+						<!-- <span class="tagline">A creative man is motivated by the desire to achieve, not by the desire to beat others.</span> -->
 					</div>
-				</article>
- 				
-				<!-- <div id="retainable-rss-embed" 
-					data-rss="https://medium.com/feed/@bass.dolg"
-					data-maxcols="3" 
-					data-layout="slider" 
-					data-poststyle="inline" 
-					data-readmore="Read the rest" 
-					data-buttonclass="btn btn-primary" 
-					data-offset="-100">
-				</div> -->
- 				<article class="post">
-					<header class="entry-header">
- 						<div class="entry-meta"> 
- 							<span class="posted-on"><time class="entry-date published" date="2013-06-17">January 24, 2023</time></span>			
- 						</div> 
- 						<h1 class="entry-title">
-							<a href="https://medium.com/latinxinai/vectorized-convolution-operation-using-numpy-b122fd52fba3"
-							   target='_blank'	 
-							   rel="bookmark">
-							   Vectorized convolutions with Numpy</a>
-							</h1>
-					</header> 
-					<div class="entry-content"> 
-						<!-- <p><img alt="" src="assets/images/mac.jpg"></p> -->
-						<p>Last summer I had what I thought was a fantastic idea: let’s code a two players version of the game Asteroids, using Pyscript, and then use reinforcement learning to teach a neural network to play that game. And yes… “I thought it was a fantastic idea”. Well, it wasn’t that fantastic! First of all, Pyscript is a relatively new library, with hardly any documentation. Secondly (and most important), Pyscript is based on Pyodide, which doesn’t support any Deep Learning library such as Keras, Tensorflow or Pytorch. And I discovered this… after two months of coding the game itself! <a href="https://medium.com/latinxinai/vectorized-convolution-operation-using-numpy-b122fd52fba3" target='_blank' class="more-link">Continue reading&#8230;</a></p>
-					</div> 
-				</article>
-
-				<article class="post">
-					<header class="entry-header">
- 						<div class="entry-meta"> 
- 							<span class="posted-on"><time class="entry-date published" date="2013-06-17">December 18, 2022</time></span>			
- 						</div> 
- 						<h1 class="entry-title">
-							<a href="https://medium.com/@bass.dolg/neural-network-from-scratch-part-1-2a209cc481f6"
-							   target='_blank'	 
-							   rel="bookmark">
-							   Neural Networks from scratch</a>
-							</h1>
-					</header> 
-					
-					<div class="entry-content"> 
-						<!-- <p><img alt="" src="assets/images/mac.jpg"></p> -->
-						<p>This article will go through a basic implementation of a neural network using only NumPy. It will be divided in two, one part for the forward pass and the other (here) for the backward pass. If you want, you can download the code in this repository, and read the Jupyter notebook version of this same article.
-							<a href="https://medium.com/@bass.dolg/neural-network-from-scratch-part-1-2a209cc481f6" target='_blank' class="more-link">
-								Continue reading&#8230;
-							</a>
-						</p>
-					</div> 
-
-				</article>
-									
-			</div> 
+				</div>
+			</h1>
 		</div>
 
-		<!-- <center class="">
+		<nav class="navbar navbar-default navbar-sticky">
+			<div class="container-fluid">
+
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
+						<span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span
+							class="icon-bar"></span> <span class="icon-bar"></span> </button>
+				</div>
+
+				<div class="navbar-collapse collapse" id="navbar-collapse">
+
+					<ul class="nav navbar-nav">
+						<li><a href="index.html">Home</a></li>
+						<li><a href="about.html">About</a></li>
+						<li class="active"><a href="blog.html">Blog</a></li>
+					</ul>
+
+				</div><!--/.nav-collapse -->
+			</div>
+		</nav>
+	</header>
+
+	<main id="main">
+
+		<div class="container">
+			<div class="row topspace">
+				<div class="col-sm-8 col-sm-offset-2">
+
+					<article class="post">
+						<header class="entry-header">
+							<div class="entry-meta">
+								<span class="posted-on"><time class="entry-date published" date="2013-09-27">May,
+										2023</time></span>
+							</div>
+							<h1 class="entry-title">Hello world!</h1>
+						</header>
+						<div class="entry-content">
+							<p>When I want to learn a new topic, I immerse myself in the writings of those who have
+								generously
+								helped me understand various subjects. Writing a blog is my way of paying it forward and
+								giving
+								back to the community that has supported me in my own learning journey. By sharing
+								my knowledge through articles, I hope to contribute to the collective pool of
+								information and provide others with the same kind of guidance and enlightenment
+								that I have received.</p>
+						</div>
+					</article>
+
+		
+					<article class="post">
+						<header class="entry-header">
+							<div class="entry-meta">
+								<span class="posted-on"><time class="entry-date published" date="2013-06-17">December 11,
+										2023</time></span>
+							</div>
+							<h1 class="entry-title">
+								<a href="tsa.html"
+									rel="bookmark">
+									Time Series Analysis</a>
+							</h1>
+						</header>
+						<div class="entry-content">
+							<!-- <p><img alt="" src="assets/images/mac.jpg"></p> -->
+							<p>Nowadays studying Data Science and develop personal projects is easier than ever. There
+								are many websites with free and interesting datasets out there. This is just one of many
+								examples of that. At the Barcelona government website, I found this dataset that gives
+								us a very good starting point for a Time Series analysis. <a
+									href="tsa.html"
+									class="more-link">Continue reading&#8230;</a></p>
+						</div>
+					</article>
+					<article class="post">
+						<header class="entry-header">
+							<div class="entry-meta">
+								<span class="posted-on"><time class="entry-date published" date="2013-06-17">January 24,
+										2023</time></span>
+							</div>
+							<h1 class="entry-title">
+								<a href="https://medium.com/latinxinai/vectorized-convolution-operation-using-numpy-b122fd52fba3"
+									target='_blank' rel="bookmark">
+									Vectorized convolutions with Numpy</a>
+							</h1>
+						</header>
+						<div class="entry-content">
+							<!-- <p><img alt="" src="assets/images/mac.jpg"></p> -->
+							<p>Last summer I had what I thought was a fantastic idea: let’s code a two players version
+								of the game Asteroids, using Pyscript, and then use reinforcement learning to teach a
+								neural network to play that game. And yes… “I thought it was a fantastic idea”. Well, it
+								wasn’t that fantastic! First of all, Pyscript is a relatively new library, with hardly
+								any documentation. Secondly (and most important), Pyscript is based on Pyodide, which
+								doesn’t support any Deep Learning library such as Keras, Tensorflow or Pytorch. And I
+								discovered this… after two months of coding the game itself! <a
+									href="https://medium.com/latinxinai/vectorized-convolution-operation-using-numpy-b122fd52fba3"
+									target='_blank' class="more-link">Continue reading&#8230;</a></p>
+						</div>
+					</article>
+
+					<article class="post">
+						<header class="entry-header">
+							<div class="entry-meta">
+								<span class="posted-on"><time class="entry-date published" date="2013-06-17">December
+										18, 2022</time></span>
+							</div>
+							<h1 class="entry-title">
+								<a href="https://medium.com/@bass.dolg/neural-network-from-scratch-part-1-2a209cc481f6"
+									target='_blank' rel="bookmark">
+									Neural Networks from scratch</a>
+							</h1>
+						</header>
+
+						<div class="entry-content">
+							<!-- <p><img alt="" src="assets/images/mac.jpg"></p> -->
+							<p>This article will go through a basic implementation of a neural network using only NumPy.
+								It will be divided in two, one part for the forward pass and the other (here) for the
+								backward pass. If you want, you can download the code in this repository, and read the
+								Jupyter notebook version of this same article.
+								<a href="https://medium.com/@bass.dolg/neural-network-from-scratch-part-1-2a209cc481f6"
+									target='_blank' class="more-link">
+									Continue reading&#8230;
+								</a>
+							</p>
+						</div>
+
+					</article>
+
+					<article class="post">
+						<header class="entry-header">
+							<div class="entry-meta">
+								<span class="posted-on"><time class="entry-date published" date="2013-06-17">September
+										6, 2022</time></span>
+							</div>
+							<h1 class="entry-title">
+								<a href="https://medium.com/@bass.dolg/%EF%B8%8Fweb-scraping-with-beatiful-soup-e87bb16cf61a"
+									target='_blank' rel="bookmark">
+									Web Scraping with Beatiful Soup</a>
+							</h1>
+						</header>
+
+						<div class="entry-content">
+							<!-- <p><img alt="" src="assets/images/mac.jpg"></p> -->
+							<p>Beatiful Soup (in its latest version, BS4) is a well known and wide used Python library,
+								very useful to scrape data from websites. Although there are more advanced tools, BS4 is
+								still one of the first choices among data analysts when they need to gather information.
+								<a href="https://medium.com/@bass.dolg/%EF%B8%8Fweb-scraping-with-beatiful-soup-e87bb16cf61a"
+									target='_blank' class="more-link">
+									Continue reading&#8230;
+								</a>
+							</p>
+						</div>
+
+					</article>
+
+				</div>
+			</div>
+
+			<!-- <center class="">
 			<ul class="pagination">
 				<li class="disabled"><a href="">&laquo;</a></li>
 				<li class="active"><a href="">1</a></li>
@@ -146,56 +206,62 @@
 				<li><a href="">&raquo;</a></li>
 			</ul>
 		</center> -->
-		<h2 class="section-title"><span>Contact me</span></h2>
-		<div class="row section topspace" style="display: flex; justify-content: center;">
-			<div class="panel-cta col-md-8">
-				<div class="panel-body">
-					<form id="fs-frm" name="simple-contact-form" accept-charset="utf-8" action="https://formspree.io/f/{form_id}" method="post">
-						<fieldset id="fs-frm-inputs">
-							<div><label for="full-name">Full Name</label></div>
-							<div><input type="text" name="name" id="full-name" placeholder="First and Last" required=""></div>
-							<div><label for="email-address">Email Address</label></div>
-							<div><input type="email" name="_replyto" id="email-address" placeholder="email@domain.tld" required=""></div>
-							<div><label for="message">Message</label></div>
-							<div><textarea rows="5" name="message" id="message" placeholder="Write your query here." required=""></textarea></div>
-							<div><input type="hidden" name="_subject" id="email-subject" value="Contact Form Submission"></div>
-						</fieldset>
-						<input class="btn btn-primary" type="submit" value="Submit">
-					</form>
+			<h2 class="section-title"><span>Contact me</span></h2>
+			<div class="row section topspace" style="display: flex; justify-content: center;">
+				<div class="panel-cta col-md-8">
+					<div class="panel-body">
+						<form id="fs-frm" name="simple-contact-form" accept-charset="utf-8"
+							action="https://formspree.io/f/{form_id}" method="post">
+							<fieldset id="fs-frm-inputs">
+								<div><label for="full-name">Full Name</label></div>
+								<div><input type="text" name="name" id="full-name" placeholder="First and Last"
+										required=""></div>
+								<div><label for="email-address">Email Address</label></div>
+								<div><input type="email" name="_replyto" id="email-address"
+										placeholder="email@domain.tld" required=""></div>
+								<div><label for="message">Message</label></div>
+								<div><textarea rows="5" name="message" id="message" placeholder="Write your query here."
+										required=""></textarea></div>
+								<div><input type="hidden" name="_subject" id="email-subject"
+										value="Contact Form Submission"></div>
+							</fieldset>
+							<input class="btn btn-primary" type="submit" value="Submit">
+						</form>
+					</div>
 				</div>
-			</div>
 
-		</div> <!-- /section -->
+			</div> <!-- /section -->
 
-	</div>	<!-- /container -->
+		</div> <!-- /container -->
 
-</main>
+	</main>
 
-<footer id="footer" class="topspace">
-	<div class="container">
-		<div class="row">
-			
-		</div> <!-- /row of widgets -->
-	</div>
-</footer>
+	<footer id="footer" class="topspace">
+		<div class="container">
+			<div class="row">
 
-<footer id="underfooter">
-	<div class="container">
-		<div class="row">
-			
-			
+			</div> <!-- /row of widgets -->
+		</div>
+	</footer>
 
-		</div> <!-- /row of widgets -->
-	</div>
-</footer>
+	<footer id="underfooter">
+		<div class="container">
+			<div class="row">
 
 
 
-<!-- JavaScript libs are placed at the end of the document so the pages load faster -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-<script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
-<script src="assets/js/template.js"></script>
-<script src="assets/js/footer_filler.js"></script>
-<script src="https://www.twilik.com/assets/retainable/rss-embed/retainable-rss-embed.js"></script>
+			</div> <!-- /row of widgets -->
+		</div>
+	</footer>
+
+
+
+	<!-- JavaScript libs are placed at the end of the document so the pages load faster -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+	<script src="assets/js/template.js"></script>
+	<script src="assets/js/footer_filler.js"></script>
+	<script src="https://www.twilik.com/assets/retainable/rss-embed/retainable-rss-embed.js"></script>
 </body>
+
 </html>
